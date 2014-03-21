@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <%= render 'application/userauth' %>
+  <%= render 'application/flash_messages' %>
+  <% if signed_in? %>
+    <%= render 'application/nav_bar' %>
+  <% end %>
+  <%= yield %>
 
 </body>
 </html>

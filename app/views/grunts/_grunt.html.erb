@@ -1,0 +1,8 @@
+<p>
+  <%= grunt.body %> - <%= time_ago_in_words(grunt.created_at) %> ago
+  <% if grunt.email == current_user.email %>
+    <%= link_to "Delete", grunt, method: :delete %>
+  <% else %>
+    <%= link_to grunt.email, grunt.user %>
+  <% end %>
+</p>

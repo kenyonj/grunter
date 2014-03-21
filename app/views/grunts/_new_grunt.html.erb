@@ -1,0 +1,7 @@
+<%= form_for [current_user, grunt], id: "form" do |form| %>
+  <div>
+    <label for="message"><h3>What do you want to grunt about?</h3></label>
+    <%= form.text_area :body, id: "message1" %>
+    <%= form.submit "Grunt" %>
+  </div>
+<% end %>
