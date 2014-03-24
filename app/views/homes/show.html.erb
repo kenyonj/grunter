@@ -1,4 +1,8 @@
 <h2>Welcome to Grunter.</h2>
 <h3>where the only thing different is the title</h3>
-<%= render 'grunts/new_grunt', { user: current_user, grunt: @grunt } %>
-<%= render @grunts %>
+<% if signed_in? %>
+  <%= render 'grunts/new_grunt', { user: current_user, grunt: @grunt } %>
+  <%= render current_user.grunt_feed %>
+<% else %>
+  <%= render 'login' %>
+<% end %>
